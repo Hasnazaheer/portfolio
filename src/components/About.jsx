@@ -38,10 +38,10 @@ const ServiceCard = ({ index, title, icon }) => {
 
   return (
     <Tilt className="xs:w-[250px] w-full">
-      <div ref={cardRef} className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
-        <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
+      <div ref={cardRef} className="w-full bg-light p-[1px] rounded-[20px] shadow-card">
+        <div className="bg-white rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
           <img src={icon} alt="service-icon" className="w-16 h-16 object-contain" />
-          <h3 className="text-white text-[20px] font-bold text-center">{title}</h3>
+          <h3 className="text-primary text-[20px] font-bold text-center">{title}</h3>
         </div>
       </div>
     </Tilt>
@@ -52,13 +52,11 @@ const About = () => {
   const headingRef = useRef(null);
   const paragraphRef = useRef(null);
 
-  // Heading Animation
   useGsap(headingRef, {
     from: { opacity: 0, x: -50 },
     to: { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
   });
 
-  // Paragraph Animation
   useGsap(paragraphRef, {
     from: { opacity: 0, y: 50 },
     to: { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" },
@@ -67,12 +65,12 @@ const About = () => {
   return (
     <>
       <div ref={headingRef}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <p className={styles.sectionSubText}>Discover Sheen</p>
+        <h2 className={styles.sectionHeadText}>About Our Brand</h2>
       </div>
 
-      <p ref={paragraphRef} className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
-        I'm a passionate UI/UX Designer, Graphic Designer, and Data Science enthusiast with experience in tools like Figma, Canva, and Adobe XD. I enjoy designing user-friendly, visually appealing interfaces and solving real-world problems through creative design. With a background in Data Science and a keen eye for detail, I strive to deliver intuitive, impactful, and aesthetically pleasing digital experiences.
+      <p ref={paragraphRef} className="mt-4 text-muted text-[17px] max-w-3xl leading-[30px]">
+        At Sheen, we believe fashion is more than clothing — it's confidence, comfort, and self-expression. Our carefully curated collection brings you elegant designs, high-quality fabrics, and timeless styles. Whether it's casual wear, chic dresses, or bold accessories, Sheen empowers you to shine every day.
       </p>
 
       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-10">
